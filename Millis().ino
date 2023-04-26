@@ -18,7 +18,7 @@ void loop() {
   
   Serial.println(millis()); // print the durrent millis
   
-  // code to do somthing every 500 ms (or half sec)  
+  // code to do somthing every 500 ms (or half sec)
   if ((millis() - lastTime) > 500) { // subtract the current millis by the last recorded millis, then check if it is larger than 500
   lastTime = millis(); // record the current millis (this will not change untill recorded again)
     
@@ -27,3 +27,10 @@ void loop() {
   }
 
 }
+
+
+/*
+* an example of a way this is uesed in a practical situation is if you have an LED that needs to blink, while also checking the state of a button
+* millis alows us to do both at once. Well, not realy. what we can do is, instead of having delays, use the millis function, and it will do what we want at the given interval
+*
+/*
