@@ -16,11 +16,13 @@ Serial.begin(9600); // setup serial monitor
 
 void loop() {
   
+  Serial.println(millis()); // print the durrent millis
+  
   // code to do somthing every 500 ms (or half sec)  
-  if ((millis() - lastTime) > 500) {
-  lastTime = millis();
+  if ((millis() - lastTime) > 500) { // subtract the current millis by the last recorded millis, then check if it is larger than 500
+  lastTime = millis(); // record the current millis (this will not change untill recorded again)
     
-  Serial.println("Did it!")
+  Serial.println("Did it!"); // show that it has been done
     
   }
 
