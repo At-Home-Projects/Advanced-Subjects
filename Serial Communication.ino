@@ -1,13 +1,13 @@
 
 /*
-in this code, we use the serial monior to send messages to the arduino. if the message is a string, we will pint the string.
-if the given message is a number we will print the string and turn on an LED pluged into the pin with the number corrospondin to the given number.
-if the message does not corospond to a pin, noting will happen exept the message being printed.
-if the message is to long, we will print a message notifying the user.
-
-refrences:
- https://www.programmingelectronics.com/serial-read/
- https://www.youtube.com/watch?v=nSGnCT080d8&t=336s
+* in this code, we use the serial monior to send messages to the arduino. if the message is a string, we will pint the string.
+* if the given message is a number we will print the string and turn on an LED pluged into the pin with the number corrospondin to the given number.
+* if the message does not corospond to a pin, noting will happen exept the message being printed.
+* if the message is to long, we will print a message notifying the user.
+*
+* refrences:
+* https://www.programmingelectronics.com/serial-read/
+* https://www.youtube.com/watch?v=nSGnCT080d8&t=336s
 */
 
 const int maxMessageLength = 20; // set the max amount of characters the message can be
@@ -25,9 +25,11 @@ void loop() {
     // Create a place to hold the incoming message (a char array)
     static char message[maxMessageLength]; // a char array for the message string
     static unsigned int messagePos = 0;    // a variable for which char we currently are working with
-    // note that static just means that the variable or array will act like a global variable or aray whare it will not re-enitulize
-    // every time it goes back thrugh the function or loop. But they cannot be refrenced outside of the local loop or function.
-    // they will also have to re-enitulize if the program restarts, or if void loop resets.
+    /*
+    * note that static just means that the variable or array will act like a global variable or aray whare it will not re-enitulize
+    * every time it goes back thrugh the function or loop. But they cannot be refrenced outside of the local loop or function.
+    * they will also have to re-enitulize if the program restarts, or if void loop resets.
+    */
 
     char inByte = Serial.read(); // Read the next available byte in the serial receive buffer
 
