@@ -14,13 +14,13 @@ Serial.begin(9600); // setup serial monitor
 
 void loop() {
   
-  Serial.println(millis()); // print the durrent millis (not nessesary for following code (just so you can see how it works))
+  Serial.println(millis()); // print the durrent millis (not nessesary for the following code (just so you can see how it works))
   
   // code to do somthing every 500 ms (or half sec)
   if ((millis() - lastTime) > 500) { // subtract the current millis by the last recorded millis, then check if it is larger than 500
   lastTime = millis(); // record the current millis (this will not change untill recorded again)
     
-  Serial.println("Did it!"); // show that it has been done
+  Serial.println("Did it!"); // show that the if statement worked
     
   }
 
@@ -29,6 +29,5 @@ void loop() {
 
 /*
 * an example of a way this is uesed in a practical situation is if you have an LED that needs to blink, while also checking the state of a button
-* millis alows us to do both at once. Well, not realy. what we can do is, instead of having delays, use the millis function, and it will do what we want at the given interval
-*
-/*
+* millis alows us to do both at once. Well, not realy. what we can do is, instead of having delays, use the millis function, and it will do what we want at the given interval.
+*/
